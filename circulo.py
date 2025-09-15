@@ -1,29 +1,42 @@
+'''5)  En  el  archivo  circulo.py,  generar  la  clase  correspondiente  al  siguiente 
+diagrama: 
+-------------------------------
+Circulo
+    <<Atributos de clase>>
+PI: float
+    <<Atributos de instancia>>
+radio: float
+-------------------------------
+    <<Constructores>>
+Circulo(radio: float)
+    <<Comandos>>
+establecerRadio(radio: float)
+    <<Consultas>>
+obtenerRadio(): float
+obtenerDiametro(): float
+obtenerArea(): float
+obtenerPerimetro(): float
+-------------------------------
+
+Nota: el radio está medido en centímetros 
+'''
 import math
 
-class Circulo:
-    pi:float = math.pi
-    
-    def __init__(self,radio:float):
+class Circulo():
+# atributos de clase
+    PI = math.pi
+# Metodo de inicializacion
+    def __init__(self, radio):
         self.radio = radio
-        
-        
-    def estrablecerRadio(self,radio:float):
-        self.radio = radio;
-    
+# Comandos
+    def establecerRadio(self, radio):
+        self.radio = radio
+# Consultas
     def obtenerRadio(self):
         return self.radio
-    
-    def obterDiametro(self):
-        return self.radio*2
-    
+    def obtenerDiametro(self):
+        return self.radio * 2
     def obtenerArea(self):
-        #return math.pi * (self.radio **2)
-        return self.pi * (self.radio **2)
-    
+        return self.PI * self.radio * self.radio
     def obtenerPerimetro(self):
-        #return 2 * math.pi * self.radio
-        return 2 * self.pi * self.radio
-    
-    
-    
-    
+        return self.PI * self.obtenerDiametro()
